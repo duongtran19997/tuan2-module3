@@ -1,0 +1,7 @@
+{
+  "name": "[Thuc-hanh]-Lay-du-lieu-nguoi-dung-trong-ung-dung-web",
+  "version": "1.0.0",
+  "dependencies": {
+    "string_decoder": "^1.3.0"
+  }
+}
