@@ -10,6 +10,8 @@ const server = http.createServer((req, res) => {
             console.log(err.message);
         } else {
             dataJSON =JSON.parse(data)
+            console.log(dataJSON);
+            console.log(data);
             dataJSON.forEach((value,index)=>{
                 html += '<tr>'
                 html += `<td>${value.id}</td>`

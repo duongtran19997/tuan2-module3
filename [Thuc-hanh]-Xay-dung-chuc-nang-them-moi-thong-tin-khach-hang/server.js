@@ -16,9 +16,9 @@ const server = http.createServer((req, res) => {
                 dataHTML+=chunk
             })
             req.on('end',()=>{
-                let name = qs.parse(dataHTML)
+                let name = qs.parse(dataHTML).name
                 console.log(name)
-                fs.writeFile('./data/data',JSON.stringify(name),err=>{
+                fs.writeFile('./data/data',name,err=>{
                     if(err){
                         console.log('err')
                         return

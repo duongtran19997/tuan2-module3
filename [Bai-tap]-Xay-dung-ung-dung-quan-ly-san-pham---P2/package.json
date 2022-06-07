@@ -1,0 +1,7 @@
+{
+  "name": "[Bai-tap]-Xay-dung-ung-dung-quan-ly-san-pham---P2",
+  "version": "1.0.0",
+  "dependencies": {
+    "qs": "^6.10.5"
+  }
+}
