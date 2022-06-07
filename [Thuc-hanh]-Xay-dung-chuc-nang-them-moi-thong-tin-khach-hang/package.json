@@ -1,0 +1,7 @@
+{
+  "name": "[Thuc-hanh]-Xay-dung-chuc-nang-them-moi-thong-tin-khach-hang",
+  "version": "1.0.0",
+  "dependencies": {
+    "qs": "^6.10.5"
+  }
+}
