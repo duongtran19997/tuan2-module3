@@ -2,7 +2,7 @@ const fs = require('fs')
 let loadData = ''
 const data = 'i am a super man'+'with a super woman'
 
-const writerStream = fs.createWriteStream('./test','utf-8')
+const writerStream = fs.createWriteStream('./test.json','utf-8')
 
 writerStream.write(data)
 writerStream.end()

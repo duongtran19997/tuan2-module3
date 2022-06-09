@@ -1,0 +1,8 @@
+{
+  "name": "[Bai-tap]-Xay-dung-ung-dung-quan-ly-san-pham---P3",
+  "version": "1.0.0",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "qs": "^6.10.5"
+  }
+}
