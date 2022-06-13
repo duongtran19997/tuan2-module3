@@ -6,13 +6,18 @@ let store = []
 const server = http.createServer((req, res) => {
     if (req.method === 'GET') {
         fs.readFile('./views/addnew.html', 'utf-8', (err, data) => {
-            res.writeHead(200, 'success', {'content-type': 'text/html'})
-            res.write(data)
-            return res.end()
-        })
+            if(err){
+                console.log(err.message);
+                console.log('fuck')
+            }else{  res.writeHead(200, 'success', {'content-type': 'text/html'})
+                res.write(data)
+                console.log("lon")
+                return res.end()
+
+            }})
+
     } else {
         let dataHTML = ''
-
         req.on('data', chunk => {
             dataHTML += chunk
         })
@@ -20,7 +25,7 @@ const server = http.createServer((req, res) => {
             let product = qs.parse(dataHTML)
             store.push(product)
             console.log(store)
-            fs.writeFile('./data/data.json', JSON.stringify(store), err => {
+            fs.writeFile('./data/data.json', JSON.stringify(store), (err) => {
                 if (err) {
                     console.log('err');
                     return

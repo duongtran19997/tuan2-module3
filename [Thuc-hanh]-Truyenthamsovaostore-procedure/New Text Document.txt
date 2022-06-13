@@ -1,0 +1,52 @@
+use classicmodels;
+
+-- tham số loại IN--
+DELIMITER //
+CREATE PROCEDURE getcusbyid
+(IN cusnum int(11))
+begin
+select * from customers where customerNumber = cusNum;
+End // 
+DELIMITER ;
+
+call getCusById(175);
+
+drop procedure getcustomercountbycity;
+
+delimiter //
+create procedure getcustomercountbycity(
+in incity varchar(50),
+out total int
+)
+begin
+	select count(customernumber)
+    into total
+    from customers
+    where city = incity;
+    
+    end//
+    delimiter ;
+    
+    call getcustomercountbycity('Lyon',@total);
+    select @total;
+    
+    delimiter //
+    create procedure setcounter(
+    inout counter int,
+    in inc int
+    )
+    begin 
+    set counter = counter + inc;
+    end//
+    delimiter ;
+    
+    drop procedure setcounter;
+    
+    set @counter = 2;
+    
+    call setcounter(@counter,2);
+    CALL SetCounter(@counter,1);
+
+CALL SetCounter(@counter,5);
+
+SELECT @counter; -- 10
